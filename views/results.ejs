@@ -1,0 +1,22 @@
+<%- include ('templates/header'); -%>
+
+<div class='container'>
+    <div class='jumbotron'>
+        <h1> SEARCH RESULTS </h1>
+        <button class='btn btn-info' onclick='location.href="/";'>Search Again</button>
+    </div>
+    
+    <ul id='books-list'>
+     <div>
+         <p> <strong> Title:</strong> <%=data["ISBN:" + query].title%>
+         <p> <strong>  Author:</strong> <%=data["ISBN:" + query].authors[0].name%> </p> <br>
+         <p> <strong> Publish: </strong> <%=data["ISBN:" + query].publish_date%> </p> <br>
+         <p> <strong> Publisher: </strong> <%=data["ISBN:" + query].publishers[0].name%> </p> <br>
+         <p> <strong> ISBN: </strong> <%=query%> </p> <br> 
+         <p> <strong> Pages: </strong> <%=data["ISBN:" + query].number_of_pages%> </p> <br><br>
+       <div> <img class='poster' src=<%=data["ISBN:" + query].cover.large%> /> </div>
+    </div> 
+    </ul>
+</div>
+
+<%- include ('templates/footer'); -%>
